@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Liste of books</title>
+        <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>JSON Data</h1>
+        <p id="root"></p>
+        <script>
+            var jsonfile ={{ jsonfile|tojson }};
+            var obj = JSON.parse(jsonfile);;
+            document.getElementById("root").innerHTML = obj;
+        </script>
+    </body>
+</html>
+
