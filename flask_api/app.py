@@ -2,7 +2,7 @@ import sys, os
 from flask import Flask , json, jsonify, render_template, abort, url_for
 import json
 
-app = Flask(__name__, template_folder='.')
+app = Flask(__name__, template_folder='./static')
 
 
 
@@ -16,7 +16,7 @@ with open('books.json', 'r') as myfile:
 #Une home page à la racine de votre application (/) avec un titre "hello my app"
 @app.route("/")
 def index():
-    return "hello my app "
+    return render_template('index.html')
 
 #faite une route `/api/books` avec une méthode `GET` qui retourne cette variable sous forme de json 
 @app.route("/api/books", methods=['GET'])
@@ -32,7 +32,7 @@ def books():
     #     }
     # ]
     # return jsonify(book)
-    return render_template('/Statics/index.html', title="page", jsonfile=json.dumps(data))
+    return render_template('books.html', title="page", jsonfile=json.dumps(data))
 
 
 #faite une route qui retourne un book selon son `id`     
