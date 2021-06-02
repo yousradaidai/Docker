@@ -1,0 +1,15 @@
+Corses : 
+
+https://www.katacoda.com/courses/docker
+https://www.katacoda.com/
+
+links : 
+
+http://sdz.tdct.org/sdz/creez-vos-applications-web-avec-flask.html#LeprotocoleHTTP
+https://sodocumentation.net/flask/topic/3678/static-files
+https://dzone.com/articles/build-deploy-flask-application-using-docker
+
+
+docker container run -dt -p 8080:80 nginx
+
+This will start the Nginx container and map TCP port 80 in the container to port 8080 on the Docker host
